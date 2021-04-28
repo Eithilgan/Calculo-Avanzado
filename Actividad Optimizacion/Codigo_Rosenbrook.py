@@ -10,16 +10,25 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
 from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.patches as mpatches
 
-t = np.linspace(0.1, 1, 10)
+t = np.linspace(0.1, 3, 30)
 a = 2.0
 
 
 def Weibull(t,a):
     func = 1-np.exp(-(a*t))
     return func
+def Higuchi(t,a):
+    func2= a*t**(0.5)
+    return func2
 
+orange_patch = mpatches.Patch(color='orange', label='Higuchi')
+blue_patch = mpatches.Patch(color='dodgerblue', label='Weibull')
+
+plt.legend(handles=[orange_patch,blue_patch])
 plt.plot(Weibull(t,a))
+plt.plot(Higuchi(t,a))
 
 
 
