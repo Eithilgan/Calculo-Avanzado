@@ -38,8 +38,8 @@ figRos = plt.figure(figsize=(12, 7))
 axRos = figRos.gca(projection='3d')
 
 # Evaluar la funcion
-X = np.arange(0, 1, 0.1)
-Y = np.array(Weibull(t,a))
+X = np.arange(-2, 2, 0.15)
+Y = np.arange(-1, 3, 0.15)
 X, Y = np.meshgrid(X, Y)
 Z = f(X,Y)
 
